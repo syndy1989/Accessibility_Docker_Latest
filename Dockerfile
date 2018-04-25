@@ -58,9 +58,9 @@ COPY datafile.properties C:\\docker_accessibility\\datafile.properties
 
 RUN SET CLASSPATH=C:\\docker_accessibility\\lib\\axe-selenium-2.0.jar;C:\\docker_accessibility\\lib\\com.nft.testing_axe.jar;C:\\docker_accessibility\\lib\\com.docker_parsing.jar;C:\\docker_accessibility\\lib\\java-json.jar;C:\\docker_accessibility\\lib\\jsch-0.1.54.jar;C:\\docker_accessibility\\lib\\json-simple-1.1.jar;C:\\docker_accessibility\\lib\\org.eclipse.jgit-3.4.0.201406041058-rc3.jar;C:\\docker_accessibility\\lib\\selenium-java-2.45.0.jar;C:\\docker_accessibility\\lib\\selenium-server-standalone-3.4.0.jar;
 
-RUN javac -cp "C:\\docker_accessibility\\lib\\axe-selenium-2.0.jar;C:\\docker_accessibility\\lib\\com.nft.testing_axe.jar;C:\\docker_accessibility\\lib\\com.docker_parsing.jar;C:\\docker_accessibility\\lib\\java-json.jar;C:\\docker_accessibility\\lib\\jsch-0.1.54.jar;C:\\docker_accessibility\\lib\\json-simple-1.1.jar;C:\\docker_accessibility\\lib\\org.eclipse.jgit-3.4.0.201406041058-rc3.jar;C:\\docker_accessibility\\lib\\selenium-java-2.45.0.jar;C:\\docker_accessibility\\lib\\selenium-server-standalone-3.4.0.jar;" Docker_Accessibility.java
+CMD ["javac", "Docker_Accessibility.java"]
 
-RUN java -cp "C:\\docker_accessibility\\lib\\axe-selenium-2.0.jar;C:\\docker_accessibility\\lib\\com.nft.testing_axe.jar;C:\\docker_accessibility\\lib\\com.docker_parsing.jar;C:\\docker_accessibility\\lib\\java-json.jar;C:\\docker_accessibility\\lib\\jsch-0.1.54.jar;C:\\docker_accessibility\\lib\\json-simple-1.1.jar;C:\\docker_accessibility\\lib\\org.eclipse.jgit-3.4.0.201406041058-rc3.jar;C:\\docker_accessibility\\lib\\selenium-java-2.45.0.jar;C:\\docker_accessibility\\lib\\selenium-server-standalone-3.4.0.jar;" Docker_Accessibility
+CMD ["java", "Docker_Accessibility"]
 
 #ENTRYPOINT ["java"]
 
