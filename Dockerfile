@@ -54,7 +54,7 @@ WORKDIR C:\\docker_accessibility\\lib
 
 ENV SET CLASSPATH=C:\\docker_accessibility\\lib\\axe-selenium-2.0.jar;C:\\docker_accessibility\\lib\\com.nft.parsing_docker;C:\\docker_accessibility\\lib\\java-json.jar;C:\\docker_accessibility\\lib\\jsch-0.1.54.jar;C:\\docker_accessibility\\lib\\json-simple-1.1.jar;C:\\docker_accessibility\\lib\\org.eclipse.jgit-3.4.0.201406041058-rc3.jar;C:\\docker_accessibility\\lib\\selenium-java-2.45.0.jar;C:\\docker_accessibility\\lib\\selenium-server-standalone-3.4.0.jar;
 
-RUN javac -classpath "./*;" Demo.java
+CMD ["javac", "-classpath"," "./*;" ","Demo.java"]
 
 #RUN java -classpath ""./*;"" Docker_Accessibility
 
