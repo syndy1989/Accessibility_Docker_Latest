@@ -30,14 +30,12 @@ import com.nft.parsing_docker.Docker_Parsing;
 public class Docker_Accessibility{
 	
 	
-	//static Testing t=new Testing();
+	
 	static List<String> filelist =new ArrayList();
 	static ArrayList<JSONArray> final10=new ArrayList<JSONArray>();
 	static String result1=null;
 	static JSONArray jsonresults=null;
 	static ArrayList<String> pagename = new ArrayList<String>();
-	//Parsing value= new Parsing();
-
 	static final URL scriptUrl = Docker_Accessibility.class.getResource("axe.min.js");
 
 	
