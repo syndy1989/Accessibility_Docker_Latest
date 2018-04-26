@@ -25,7 +25,7 @@ import com.nft.parsing_docker.Docker_Parsing;
 
 
 
-public class Demotest{
+public class Demo{
 	
 	
 	
