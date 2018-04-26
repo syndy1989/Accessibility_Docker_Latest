@@ -77,7 +77,7 @@ public class Docker_Accessibility{
 		}
 		
 		
-		//calling substring for unique file name
+		/*//calling substring for unique file name
 		result1=Sub_String_url(driver.getCurrentUrl(), 1);
 		
 		
@@ -87,11 +87,11 @@ public class Docker_Accessibility{
 		filelist.add(fileresult);
 		pagename.add("home");
 		
-		Docker_Parsing value=new Docker_Parsing();
+		Docker_Parsing value=new Docker_Parsing();*/
 		
 		
 		
-		try {
+		/*try {
 			final10=value.parsingfile(filelist, pagename);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -111,7 +111,7 @@ public class Docker_Accessibility{
 		} catch (GitAPIException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 	
 		
