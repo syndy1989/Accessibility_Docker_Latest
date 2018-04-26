@@ -60,6 +60,8 @@ ENV javac -classpath "./*;" Demo.java
 
 #ENTRYPOINT ["java"]
 
-CMD java -classpath "./*;" Demo
+#CMD java -classpath "./*;" Demo
+
+CMD dir
 
 #CMD ["-jar","Docker_Accessibility.jar"]
