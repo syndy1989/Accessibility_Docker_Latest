@@ -3,21 +3,25 @@
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-
+import java.util.Stack;
 import org.eclipse.jgit.api.errors.GitAPIException;
 import org.eclipse.jgit.api.errors.InvalidRemoteException;
 import org.eclipse.jgit.errors.TransportException;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
+import com.deque.axe.AXE;
 import com.nft.parsing_docker.Docker_Parsing;
 
 
@@ -26,19 +30,21 @@ import com.nft.parsing_docker.Docker_Parsing;
 public class Docker_Accessibility{
 	
 	
-	static Testing t=new Testing();
+	//static Testing t=new Testing();
 	static List<String> filelist =new ArrayList();
 	static ArrayList<JSONArray> final10=new ArrayList<JSONArray>();
 	static String result1=null;
 	static JSONArray jsonresults=null;
 	static ArrayList<String> pagename = new ArrayList<String>();
 	//Parsing value= new Parsing();
-	
+
 	static final URL scriptUrl = Docker_Accessibility.class.getResource("axe.min.js");
 
 	
 	public static void main(String[] args) {
+		
 		Delete_Directory();
+		
 		 File file = new File("C:\\docker_accessibility\\datafile.properties");
 			FileInputStream fileInput = null;
 			try {
@@ -66,7 +72,7 @@ public class Docker_Accessibility{
 		
 		//calling method axe
 		try {
-			jsonresults=t.run_axe(driver, scriptUrl);
+			jsonresults=run_axe(driver, scriptUrl);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -74,12 +80,12 @@ public class Docker_Accessibility{
 		
 		
 		//calling substring for unique file name
-		result1=t.Sub_String_url(driver.getCurrentUrl(), 1);
+		result1=Sub_String_url(driver.getCurrentUrl(), 1);
 		
 		
 		
 		//creating file with unique name
-	String fileresult=	t.dynamic_filecreation(result1, jsonresults);
+	String fileresult=dynamic_filecreation(result1, jsonresults);
 		filelist.add(fileresult);
 		pagename.add("home");
 		
@@ -112,8 +118,9 @@ public class Docker_Accessibility{
 	
 		
 	}
-	
-	private static Delete_Directory Delete_Directory() {
+
+
+	public static Delete_Directory Delete_Directory() {
 		File dir = new File("C://repo");
 		File[] currList;
 		Stack<File> stack = new Stack<File>();
@@ -133,7 +140,8 @@ public class Docker_Accessibility{
 		    }
 		}
 		return null;
-	}	
+	}
+	
 	public static JSONArray run_axe(WebDriver driver,URL scriptUrl) throws JSONException {
 		JSONArray violations = null;
 		JSONObject responseJSON = new AXE.Builder(driver, scriptUrl).analyze();
@@ -180,5 +188,6 @@ public class Docker_Accessibility{
 		public List<String> filelist1(List<String> filename){
 		return filename;
 		}
+	
 }
 
