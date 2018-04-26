@@ -77,7 +77,7 @@ public class Demo{
 		
 		
 		//calling substring for unique file name
-		result1=Sub_String_url(driver.getCurrentUrl(), 1);
+		result1=Sub_String_url("https://www.google.co.in", 1);
 		
 		
 		
